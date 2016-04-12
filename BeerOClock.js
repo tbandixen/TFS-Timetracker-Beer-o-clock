@@ -10,22 +10,39 @@ javascript: (function () {
             var hours = parseFloat(hourElement.text());
             if (!!hours) {
                 daysWorked += 1;
+                var deltaStyles = {
+                    marginLeft: '3px',
+                    float: 'left',
+                    marginTop: '-1.34em'
+                };
+                appendToDay($(this), 'month-calendar-info-delta', '&Delta; ' + Math.round((-8.4 + hours) * 100) / 100, deltaStyles);
+                appendToDay($(this), 'month-calendar-info', '&nbsp;');
+                total += hours;
             }
-            total += hours || 0;
-            /*$(this).find('.month-calendar-date').css('text-decoration', 'underline');*/
         });
     var shouldHours = daysWorked * 8.4;
     var endTime = new Date((new Date()).setTime((new Date()).getTime() + ((shouldHours - total) * 60 * 60 * 1000)));
-    var infoContainer = $('.today', context).find('.month-calendar-info');
-    var displayElement = infoContainer.find('.beer-o-clock');
-    if (displayElement.length === 0) {
-        displayElement = $('<div class="beer-o-clock"></div>');
-        infoContainer.append(displayElement);
-    }
-    displayElement.text(formatDate(endTime));
 
+    appendToDay($('.today', context), 'month-calendar-info', formatDate(endTime));
+
+    function appendToDay(container, className, text, cssStyles) {
+        var infoContainer = getOrCreateDivByClassName(container, className);
+        var displayElement = getOrCreateDivByClassName(infoContainer, 'beer-o-clock');
+        if (!!cssStyles) {
+            displayElement.css(cssStyles);
+        }
+        displayElement.html(text);
+    }
+    function getOrCreateDivByClassName(container, className) {
+        var displayElement = container.find('.' + className);
+        if (displayElement.length === 0) {
+            displayElement = $('<div class="' + className + '"></div>');
+            container.append(displayElement);
+        }
+        return displayElement;
+    }
     function formatDate(date) {
-        return /*leadingZero(date.getDate()) + '.' + leadingZero(date.getMonth() + 1) + '. ' + */leadingZero(date.getHours()) + ':' + leadingZero(date.getMinutes());
+        return leadingZero(date.getHours()) + ':' + leadingZero(date.getMinutes());
     }
     function leadingZero(n) {
         return ('0' + n).slice(-2);
