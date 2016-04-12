@@ -2,3 +2,4 @@
 
 ### Usage
 Create a bookmark in the browser of your choice with the content of [BeerOClock.js](BeerOClock.js) as the url.
+Then on the Timetracker-overview click on the just created bookmark.
