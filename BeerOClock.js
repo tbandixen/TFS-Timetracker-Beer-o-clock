@@ -1,15 +1,22 @@
 javascript: (function () {
-    var monthDaysSelector = '.month-selector-container-calendar-month';
-    var weekDaysSelector = '.month-calendar-week-day';
-    ////
+    var selectors = {
+        monthDays: '.month-selector-container-calendar-month',
+        weekDays: '.month-calendar-week-day',
+        notCurrentMonth: '.not-current-month',
+        nonWorkDay: '.non-work-day',
+        filler: '.filler',
+        monthCalendarWeekendDay: '.month-calendar-weekend-day',
+        dayHours: '.day-hours'
+    };
+
     var total = 0, daysWorked = 0;
 
-    var context = $(monthDaysSelector);
-    var workDays = $(weekDaysSelector, context).not('.not-current-month').not('.non-work-day').not('.filler').not('.month-calendar-weekend-day');
+    var context = $(selectors.monthDays);
+    var workDays = $(selectors.weekDays, context).not(selectors.notCurrentMonth).not(selectors.nonWorkDay).not(selectors.filler).not(selectors.monthCalendarWeekendDay);
 
     workDays
         .each(function () {
-            var hourElement = $(this).find('.day-hours');
+            var hourElement = $(this).find(selectors.dayHours);
             var hours = parseFloat(hourElement.text());
             if (!!hours) {
                 daysWorked += 1;
