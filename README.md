@@ -5,4 +5,4 @@ Create a bookmark in the browser of your choice with the content of [BeerOClock.
 Then on the Timetracker-overview click on the just created bookmark.
 
 ### Dependencies
-* TFS Timetracker (Version 2.7.x)
+* TFS Timetracker (Version >= 2.7.x)
