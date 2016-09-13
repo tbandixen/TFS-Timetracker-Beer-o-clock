@@ -1,7 +1,7 @@
 # TFS Timetracker Beer o'clock
 
 ### Usage
-Create a bookmark in your browser of choise with the following settings:
+Create a bookmark in your browser of choice with the following settings:
 
 Name: Beer o'cloock
 
