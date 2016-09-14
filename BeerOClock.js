@@ -1,4 +1,5 @@
 (function () {
+    alert('03941.01.0132.08');
     var selectors = {
         monthDays: '.month-selector-container-calendar-month',
         weekDays: '.month-calendar-week-day',
