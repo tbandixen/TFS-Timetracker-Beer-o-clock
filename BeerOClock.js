@@ -57,4 +57,5 @@
     function leadingZero(n) {
         return ('0' + n).slice(-2);
     }
+    window.beerOClock = true;
 })();
