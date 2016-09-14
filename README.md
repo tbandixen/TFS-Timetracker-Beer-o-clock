@@ -7,7 +7,7 @@ Name: Beer o'cloock
 
 URL:
 ```
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://cdn.rawgit.com/tbandixen/TFS-Timetracker-Beer-o-clock/master/BeerOClock.js';})();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://raw.githack.com/tbandixen/TFS-Timetracker-Beer-o-clock/master/BeerOClock.js';})();
 ```
 Then on the Timetracker-overview click on the just created bookmark.
 
