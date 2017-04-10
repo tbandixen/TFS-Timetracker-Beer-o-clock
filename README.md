@@ -15,3 +15,4 @@ With this bookmarklet you always have the latest version of this script.
 
 ### Dependencies
 * TFS Timetracker (Version >= 2.7.x)
+* TFS Timetracker (Version < 3.x.x)
